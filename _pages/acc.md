@@ -716,7 +716,7 @@ body {
         Lecture
       </a>
       <a class="btn" href="https://training-academy.dirac.ac.uk/course/section.php?id=57">
-        ACtivities
+        Activities
       </a>
     </div>
   </div>
