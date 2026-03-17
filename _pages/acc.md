@@ -803,7 +803,7 @@ body {
 
     <div class="actions" id="actions-gpu">
       <a class="btn" href="#"
-        onclick="openVideo('8axA0RUaxRA?si=kwFcCVbDKzJw3vw4','GPU Architecture','Dr. Christopher Marcotte'); event.stopPropagation(); return false;">
+        onclick="openVideo('oUOfOdfrPgQ?si=DjRcES3RtTut9wAy','GPU Architecture','Dr. Christopher Marcotte'); event.stopPropagation(); return false;">
         Lecture
       </a>
       <a class="btn" href="https://training-academy.dirac.ac.uk/course/section.php?id=60">
