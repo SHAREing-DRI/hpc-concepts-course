@@ -596,7 +596,270 @@ body {
 }
 
 
+.activity-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
 
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10000;
+
+  padding: 20px;
+}
+
+.activity-modal-content {
+  position: relative;
+
+  width: 90%;
+width: 850px;
+  height: 90vh;
+
+  overflow-y: auto;
+
+  background: #6c2a68;
+  color: #ffffff;
+
+  border-radius: 22px;
+  border: 3px solid #ffffff;
+
+  padding: 35px;
+}
+
+.activity-modal-content h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 0;
+}
+
+.activity-modal-content h3 {
+  color: #ffffff;
+}
+
+.activity-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  background: none;
+  border: none;
+
+  color: #ffffff;
+
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.activity-question {
+  margin-top: 25px;
+}
+
+.activity-question h3 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.activity-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+
+.activity-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: #042f39;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.activity-option:hover {
+  background: #0C5D79;
+}
+
+.activity-option input {
+  transform: scale(1.3);
+}
+
+.activity-check,
+.activity-next {
+  background: #ffffff;
+  color: #042f39;
+
+  border: none;
+  border-radius: 22px;
+
+  padding: 10px 22px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.activity-check:hover,
+.activity-next:hover {
+  background: #ffe66d;
+}
+
+#activity-feedback {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.correct {
+  color: #b8f2b8;
+  font-weight: 700;
+}
+
+.incorrect {
+  color: #ffd0d0;
+  font-weight: 700;
+}
+
+
+.activity-text-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  margin: 15px 0 20px;
+  background: #ffffff;
+  color: #042f39;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.drag-items {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.drag-item {
+  padding: 12px 22px;
+  background: #ffffff;
+  color: #042f39;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: grab;
+  user-select: none;
+}
+
+.drag-item:active {
+  cursor: grabbing;
+}
+
+.drag-item.dragging {
+  opacity: 0.5;
+}
+
+.drop-zone {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.drop-box {
+  width: 150px;
+  min-height: 55px;
+  border: 2px dashed #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.drop-box.drag-over {
+  background: #0C5D79;
+}
+
+.drop-box .drag-item {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+.activity-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.activity-previous,
+.activity-next {
+  background: #ffffff;
+  color: #042f39;
+  border: none;
+  border-radius: 22px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.activity-previous:hover,
+.activity-next:hover {
+  background: #ffe66d;
+}
+
+
+.activity-code {
+  background: #042f39;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  overflow-x: auto;
+  text-align: left;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+
+.fill-in-fields {
+  margin: 25px 0;
+}
+
+.fill-in-field {
+  margin-bottom: 20px;
+}
+
+.fill-in-field label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.fill-in-field .activity-text-input {
+  margin: 0;
+}
+
+.activity-field-feedback {
+  margin-top: 6px;
+  min-height: 24px;
+}
 
 </style>
 
@@ -715,8 +978,10 @@ body {
         onclick="openVideo('3ru-v3sAdqw?si=Jj8Koun21HpjFCLY','Von Neumann Architecture','Professor Tobias Weinzierl'); event.stopPropagation(); return false;">
         Lecture
       </a>
-      <a class="btn" href="https://training-academy.dirac.ac.uk/course/section.php?id=57">
-        ACtivities
+      <a class="btn"
+        href="#"
+        onclick="openActivity('von-neumann'); event.stopPropagation(); return false;">
+        Activities
       </a>
     </div>
   </div>
@@ -1008,7 +1273,7 @@ body {
     <button onclick="closeVideo()" style="position:absolute;top:10px;right:10px;font-size:20px;background:none;border:none;color:#042f39;cursor:pointer;">×</button>
   </div>
 </div>
-
+{% include activity-modal.html %}
 
 
 </div>
@@ -1484,3 +1749,11 @@ document.querySelector(".graph-grid").addEventListener("click", function(e){
   }
 });
 </script>
+
+{% include activity-modal.html %}
+
+<script>
+window.activitiesData = {{ site.data.activities | jsonify }};
+</script>
+
+<script src="{{ '/assets/js/activities.js' | relative_url }}"></script>
